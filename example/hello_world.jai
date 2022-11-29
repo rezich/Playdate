@@ -24,10 +24,10 @@ y   := (240-TEXT_HEIGHT)/2;
 dx  := 1;
 dy  := 2;
 
-update :: (userdata: *void) -> int {
+update :: (userdata: *void) -> int #c_call {
     pd: *PD.PlaydateAPI = userdata;
 
-    pd.graphics.clear(.WHITE);
+    //pd.graphics.clear(.WHITE);
     pd.graphics.setFont(font);
 
     the_message :: "Hello world!";
@@ -36,8 +36,8 @@ update :: (userdata: *void) -> int {
     x += dx;
     y += dy;
 
-    if x < 0 || x > LCD_COLUMNS - TEXT_WIDTH    then dx = -dx;
-    if y < 0 || y > LCD_ROWS    - TEXT_HEIGHT   then dy = -dy;
+    if x < 0 || x > PD.LCD_COLUMNS - TEXT_WIDTH    then dx = -dx;
+    if y < 0 || y > PD.LCD_ROWS    - TEXT_HEIGHT   then dy = -dy;
 
     pd.system.drawFPS(0,0);
 
