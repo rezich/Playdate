@@ -174,6 +174,9 @@ PDStringEncoding :: enum {
 LCDPattern  :: #type [16] uint8_t; //TODO: CHECK
 LCDColor    :: #type uintptr_t; //TODO: CHECK
 
+// LCDMakePattern   //TODO
+// LCDOpaquePattern //TODO
+
 LCDPolygonFillRule :: enum {
     NON_ZERO; //kPolygonFillNonZero
     EVEN_ODD; //kPolygonFillEvenOdd
@@ -198,6 +201,8 @@ playdate_video :: struct {
 
 playdate_graphics :: struct {
     video:                  *playdate_video;
+
+    clear:                  (color: LCDColor);
     setBackgroundColor:     (color: LCDSolidColor);
     setStencil:             (stencil: *LCDBitmap);
     setDrawMode:            (mode: LCDBitmapDrawMode);
@@ -900,7 +905,3 @@ size_t      :: #type u32;
 
 //TODO: make sure this is what we want??
 eventHandler :: #type (playdate: *PlaydateAPI, event: PDSystemEvent, arg: u32) -> int;
-
-
-
-main :: () {} //TODO: remove, just used for testing
