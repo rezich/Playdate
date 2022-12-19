@@ -11,7 +11,7 @@ PDButtons :: enum {
 PDLanguage :: enum {
     ENGLISH;    //kPDLanguageEnglish
     JAPANESE;   //kPDLanguageJapanese
-    UNKNONW;    //kPDLanguageUnknown
+    UNKNOWN;    //kPDLanguageUnknown
 }
 
 PDMenuItem :: #type void; //TODO: CHECK
@@ -899,7 +899,7 @@ PDSystemEvent :: enum {
 }
 
 //TODO: make sure these are all correct!!
-uintptr_t   :: #type *u32;
+uintptr_t   :: #type u32;
 uint32_t    :: #type u32;
 uint8_t     :: #type u8;
 int16_t     :: #type s16;

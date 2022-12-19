@@ -28,6 +28,7 @@ update :: (userdata: *void) -> int #c_call {
     pd: *PD.PlaydateAPI = userdata;
 
     //pd.graphics.clear(.WHITE);
+    pd.graphics.clear(xx 1);
     pd.graphics.setFont(font);
 
     the_message :: "Hello world!";
