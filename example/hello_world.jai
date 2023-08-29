@@ -31,7 +31,7 @@ update :: (userdata: *void) -> int #c_call {
     pd.graphics.clear(xx 1);
     pd.graphics.setFont(font);
 
-    the_message :: "Hello world!";
+    the_message : [4] u8 : .[#char "Y", #char "O", #char "!", 0];
     pd.graphics.drawText(the_message.data, the_message.count, .ASCII, x, y);
 
     x += dx;
